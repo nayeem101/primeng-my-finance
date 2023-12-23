@@ -1,0 +1,10 @@
+.block-content {
+  padding: 0;
+  border: 1px solid var(--surface-border);
+  border-top: 0 none;
+}
+
+.main{
+  height: 100vh;
+  overflow: hidden;
+}
