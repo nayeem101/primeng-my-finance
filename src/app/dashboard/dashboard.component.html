@@ -1,0 +1,25 @@
+<!-- container -->
+<div class="w-full h-full flex flex-row">
+  <div class="flex flex-column w-8">
+    <div>
+      <p class="text-xl font-semibold mt-1 mb-3">Money Status</p>
+      <!-- money status chart -->
+      <div class="pr-3">
+        <app-money-status-chart />
+      </div>
+    </div>
+    <div class="flex flex-row mt-3 gap-4">
+      <div>
+        <p class="text-xl font-semibold">Budgets</p>
+        <app-budgets />
+      </div>
+      <div class="flex-1">
+        <p class="text-xl font-semibold">Recent Transactions</p>
+        <app-recent-transactions />
+      </div>
+    </div>
+  </div>
+  <div class="w-4">
+    <app-wallet-balance />
+  </div>
+</div>

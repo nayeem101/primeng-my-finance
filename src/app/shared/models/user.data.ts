@@ -68,8 +68,8 @@ export const user1: User = {
       },
     ],
     budgets: [
-      { name: 'Groceries', amount: 300 },
-      { name: 'Entertainment', amount: 150 },
+      { name: 'Restaurent', amount: 2000 },
+      { name: 'Pocket Money', amount: 7500 },
     ],
   },
 };

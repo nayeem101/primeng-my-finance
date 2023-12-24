@@ -1,0 +1,50 @@
+.card {
+  position: relative;
+  height: 180px;
+  width: 300px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: #1488cc;
+  /* fallback for old browsers */
+  background: linear-gradient(to right, var(--blue-600), var(--blue-900));
+}
+
+.ring {
+  position: absolute;
+}
+
+/* The two rings on the card background */
+.ring {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: transparent;
+  border: 50px solid rgba(255, 255, 255, 0.1);
+  bottom: -250px;
+  right: -250px;
+  box-sizing: border-box;
+}
+
+.ring::after {
+  content: "";
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background: transparent;
+  border: 30px solid rgba(255, 255, 255, 0.1);
+  bottom: -80px;
+  right: -110px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 240px;
+    height: 150px;
+  }
+}

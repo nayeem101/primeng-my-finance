@@ -1,0 +1,15 @@
+<div class="flex flex-column gap-3">
+  @for (item of budgetsData; track $index) {
+  <div class="border-round-2xl flex shadow-2">
+    <div class="bg-blue-700 border-round-left-xl flex align-items-center p-2 pl-3 gap-2 w-10rem lg:w-11rem">
+      <i class="pi pi-wallet text-white" ></i>
+      <p class="text-white text-base lg:text-lg">{{item.name}}</p>
+    </div>
+    <div class="bg-white border-round-right-xl p-2">
+      <p class="text-base lg:text-lg">{{item.amount}}TK</p>
+    </div>
+  </div>
+  }@empty {
+  <p>No Budget info available</p>
+  }
+</div>
