@@ -1,0 +1,22 @@
+<div class="w-full">
+  <!-- Top Section -->
+  <div class="flex flex-row flex-wrap gap-3 align-items-center">
+    <div
+      class="bg-blue-400 border-round-lg py-2 w-12rem xl:w-20rem h-8rem lg:h-10rem xl:12rem flex flex-column align-items-center justify-content-center">
+      <p class="uppercase text-gray-200 mb-2">Current Balance</p>
+      <p class="text-xl xl:text-2xl text-white font-semibold mt-2">৳{{totalBalance}} TK</p>
+    </div>
+    <app-acc-pie-chart />
+    <app-acc-horizontal-bar-chart />
+  </div>
+  <!-- Cards Section -->
+  <p-divider />
+  <div>
+    <p class="font-semibold text-lg">Cards</p>
+    <div class="flex align-items-center gap-4">
+      @for (account of accountData; track account.id) {
+      <app-money-card [account]="account" />
+      }
+    </div>
+  </div>
+</div>

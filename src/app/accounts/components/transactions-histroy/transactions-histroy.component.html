@@ -1,0 +1,54 @@
+<div class="flex flex-row gap-4">
+  <!-- left side -->
+  <div class="w-8">
+    <div class="flex flex-column gap-4">
+      @for (item of accountData; track item.id) {
+      <div class="border-round-xl bg-gray-100 py-3 px-3 xl:px-4 w-full xl:w-11">
+        <div class="flex flex-row justify-content-between align-items-center gap-2">
+          <app-money-card [account]="item" />
+          <div>
+            <h3>৳{{item.balance}}TK</h3>
+            <div class="flex flex-row gap-2 justify-content-center">
+              <div>
+                <i class="pi pi-arrow-up"></i>
+                <!-- total income -->
+                <p class="font-semibold">9500.00TK</p>
+              </div>
+              <div>
+                <i class="pi pi-arrow-down"></i>
+                <!-- total expense -->
+                <p class="font-semibold">7500.00TK</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <!-- right side -->
+  <div class="w-4">
+    <h4 class="mt-2 mb-3">All Transaction Histroy</h4>
+    <div class="shadow-1 border-round-xl bg-white px-2 w-full">
+      <!--TODO: make this a table put it in left side -->
+      <ul class="p-2 m-0 list">
+        @for (transaction of transactions; track transaction.id) {
+        <li class="py-2 flex justify-content-between align-items-center ">
+          <div class="flex align-items-center gap-2">
+            @if (getTransactionSign(transaction.type) === '-') {
+              <i class="pi pi-arrow-up-right"></i>
+            }@else {
+              <i class="pi pi-arrow-down-left"></i>
+            }
+            <div>
+              <p class="my-1">{{transaction.name}}</p>
+              <p class="my-1 text-sm">{{transaction.date}}</p>
+            </div>
+          </div>
+          <p>{{getTransactionSign(transaction.type) + transaction.amount}} TK</p>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

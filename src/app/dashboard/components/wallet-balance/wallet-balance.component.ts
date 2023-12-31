@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { Account, TransactionType } from '../../../shared/models/user.model';
-
-type AccountData = Omit<Account, 'transactions'>;
+import { AccountData } from '../../../shared/models/user.model';
+import { MoneyCardComponent } from '../../../shared/components/money-card/money-card.component';
 
 @Component({
   selector: 'app-wallet-balance',
   standalone: true,
-  imports: [CardModule],
+  imports: [CardModule, MoneyCardComponent],
   templateUrl: './wallet-balance.component.html',
-  styleUrl: './wallet-balance.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WalletBalanceComponent {
