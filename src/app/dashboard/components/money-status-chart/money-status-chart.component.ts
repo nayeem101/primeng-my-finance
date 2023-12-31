@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ChartData } from 'chart.js';
+import { ChartData, ChartOptions } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
@@ -13,26 +13,28 @@ import { ChartModule } from 'primeng/chart';
 })
 export class MoneyStatusChartComponent implements OnInit {
   data!: ChartData;
-  options: any;
-  
+  options!: ChartOptions;
+
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
-    const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+    const textColorSecondary = documentStyle.getPropertyValue(
+      '--text-color-secondary'
+    );
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {
-          label: 'First Dataset',
+          label: 'Income',
           data: [65, 59, 80, 81, 56, 55, 40],
           fill: false,
           borderColor: documentStyle.getPropertyValue('--blue-500'),
           tension: 0.4,
         },
         {
-          label: 'Second Dataset',
+          label: 'Expense',
           data: [28, 48, 40, 19, 86, 27, 90],
           fill: false,
           borderColor: documentStyle.getPropertyValue('--pink-500'),
@@ -58,7 +60,7 @@ export class MoneyStatusChartComponent implements OnInit {
           },
           grid: {
             color: surfaceBorder,
-            drawBorder: false,
+            display: false,
           },
         },
         y: {
@@ -67,11 +69,10 @@ export class MoneyStatusChartComponent implements OnInit {
           },
           grid: {
             color: surfaceBorder,
-            drawBorder: false,
+            display: true,
           },
         },
       },
     };
   }
-
 }

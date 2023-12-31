@@ -41,11 +41,13 @@ export interface Transaction {
   type: TransactionType;
   name: string;
   amount: number;
+  date?: string;
 }
 
 export interface Budget {
   name: string;
   amount: number;
+  createdAt?: string;
 }
 
 export enum TransactionType {
@@ -53,9 +55,11 @@ export enum TransactionType {
   EXPENSE = 'Expense',
   DEPOSIT = 'Deposit',
   TRANSFER = 'Transfer',
-  DEBIT = "Debit",
-  CREDIT = "Credit",
+  DEBIT = 'Debit',
+  CREDIT = 'Credit',
   FEE = 'Fee',
   REFUND = 'Refund',
   OTHER = 'Other',
 }
+
+export type AccountData = Omit<Account, 'transactions'>;

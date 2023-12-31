@@ -2,8 +2,8 @@
     <div class="main">
         <div class="min-h-screen flex relative lg:static surface-ground">
             <div
-                class="surface-section h-screen w-12rem xl:w-17rem hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none">
-                <app-sidebar style="height: 100%;" />
+                class="surface-section w-12rem xl:w-17rem hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none">
+                <app-sidebar />
             </div>
             <p-sidebar [(visible)]="sidebarVisible" class="lg:hidden">
                 <app-sidebar />
@@ -11,7 +11,7 @@
             <div class="min-h-screen flex flex-column relative flex-auto">
                 <app-topbar (hideSidebar)="onShowSidebar($event)" />
                 <div class="p-3 flex flex-column flex-auto">
-                    <div class="border-2 border-dashed surface-border border-round flex-auto p-3 pr-1">
+                    <div class="border-2 border-dashed surface-border border-round flex-auto p-3">
                         <router-outlet />
                     </div>
                 </div>

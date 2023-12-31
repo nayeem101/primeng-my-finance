@@ -8,4 +8,11 @@ export const routes: Routes = [
         (m) => m.DashboardComponent
       ),
   },
+  {
+    path: 'accounts',
+    loadComponent: () =>
+      import('../app/accounts/accounts.component').then(
+        (m) => m.AccountsComponent
+      ),
+  },
 ];
