@@ -1,0 +1,48 @@
+<div>
+  <div class="flex justify-content-between align-items-center mb-3">
+    <h3 class="m-0 font-semibold">All Transactions</h3>
+    <p-button label="Add New" icon="pi pi-plus-circle" size="small" (onClick)="onAddNewClick()" />
+  </div>
+  <div class="w-full">
+    <div class="bg-white border-round-lg shadow-1 px-2 py-3">
+      <p-toast></p-toast>
+      <p-confirmDialog></p-confirmDialog>
+      <p-table [value]="transactions" styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="520px"
+        [tableStyle]="{'min-width': '40rem'}">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="pl-4">Name</th>
+            <th pSortableColumn="date" style="width:20%">Date<p-sortIcon field="date" /></th>
+            <th>Account</th>
+            <th pSortableColumn="amount" style="width:20%">Amount<p-sortIcon field="amount" /></th>
+            <th>Action</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-transaction let-columns="columns">
+          <tr>
+            <td>
+              <span class="inline-block">
+                @if (getTransactionSign(transaction.type) === '-') {
+                <i class="pi pi-arrow-up-right"></i>
+                }@else {
+                <i class="pi pi-arrow-down-left"></i>
+                }
+              </span>
+              {{transaction.name}}
+            </td>
+            <td>{{transaction.date}}</td>
+            <td>{{transaction.accountName}}</td>
+            <td>{{transaction.amount}}TK</td>
+            <td>
+              <div class="flex">
+                <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" (onClick)="onEditClick(transaction)" />
+                <p-button icon="pi pi-trash" [rounded]="true" [text]="true"
+                  (onClick)="onDeleteClick($event,transaction)" />
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

@@ -19,12 +19,12 @@ export interface Profile {
   avatar: string;
 }
 
-export interface AccountManagerTransaction extends Transaction {
+export interface AccountTransaction extends Transaction {
   accountName: string;
 }
 
 export interface AccountManager {
-  transactions: AccountManagerTransaction[];
+  transactions: AccountTransaction[];
   accounts: Account[];
   budgets: Budget[];
 }
