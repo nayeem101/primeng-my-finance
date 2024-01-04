@@ -1,0 +1,31 @@
+<form [formGroup]="transactionForm">
+  <div class="flex flex-column gap-2 mb-2">
+    <label for="name">Name</label>
+    <input pInputText id="name" type="text" formControlName="name" />
+  </div>
+  <div class="flex gap-2">
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="account">Account</label>
+      <p-dropdown formControlName="accountName" [options]="accounts" optionLabel="name" placeholder="Select Account"
+        styleClass="w-full" appendTo="body" />
+    </div>
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="amount">Amount</label>
+      <input pInputText id="amount" pKeyFilter="money" formControlName="amount" />
+    </div>
+  </div>
+  <div class="flex gap-2">
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="date">Date</label>
+      <p-calendar id="date" formControlName="date" [iconDisplay]="'input'" [showIcon]="true" appendTo="body" />
+    </div>
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="type">Transaction Type</label>
+      <p-dropdown formControlName="type" [options]="transactionTypes" optionLabel="name" appendTo="body"
+        placeholder="Select Type" styleClass="w-full" />
+    </div>
+  </div>
+  <div class="mt-3 m-auto">
+    <p-button label="Submit" styleClass="w-full" (click)="onSubmit()" />
+  </div>
+</form>

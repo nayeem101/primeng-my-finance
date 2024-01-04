@@ -15,4 +15,11 @@ export const routes: Routes = [
         (m) => m.AccountsComponent
       ),
   },
+  {
+    path: 'transactions',
+    loadComponent: () =>
+      import('../app/transactions/transactions.component').then(
+        (m) => m.TransactionsComponent
+      ),
+  },
 ];
