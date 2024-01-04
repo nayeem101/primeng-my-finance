@@ -10,8 +10,8 @@
             </p-sidebar>
             <div class="min-h-screen flex flex-column relative flex-auto">
                 <app-topbar (hideSidebar)="onShowSidebar($event)" />
-                <div class="p-3 flex flex-column flex-auto">
-                    <div class="border-2 border-dashed surface-border border-round flex-auto p-3">
+                <div class="p-1 md:p-3 flex flex-column flex-auto">
+                    <div class="w-screen md:w-auto border-2 border-dashed surface-border border-round flex-auto p-2 md:p-3">
                         <router-outlet />
                     </div>
                 </div>
