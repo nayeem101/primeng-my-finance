@@ -1,4 +1,4 @@
-import { TransactionType, User } from './user.model';
+import { BudgetType, TransactionType, User } from './user.model';
 
 export const user1: User = {
   id: 1,
@@ -141,8 +141,42 @@ export const user1: User = {
       },
     ],
     budgets: [
-      { name: 'Restaurent', amount: 2000 },
-      { name: 'Pocket Money', amount: 7500 },
+      {
+        name: 'Grocery shopping',
+        amount: 300,
+        createdAt: '12/01/23', // December 1, 2023
+        budgetType: BudgetType.GROCERIES,
+      },
+      {
+        name: 'Movie tickets',
+        amount: 150,
+        createdAt: '11/15/23', // November 15, 2023
+        budgetType: BudgetType.ENTERTAINMENT,
+      },
+      {
+        name: 'Electricity bill',
+        amount: 250,
+        createdAt: '12/10/23', // December 10, 2023
+        budgetType: BudgetType.UTILITIES,
+      },
+      {
+        name: 'Fuel expenses',
+        amount: 200,
+        createdAt: '11/25/23', // November 25, 2023
+        budgetType: BudgetType.TRANSPORTATION,
+      },
+      {
+        name: 'Dinner at a restaurant',
+        amount: 180,
+        createdAt: '12/05/23', // December 5, 2023
+        budgetType: BudgetType.DINING_OUT,
+      },
+      {
+        name: 'Holiday trip',
+        amount: 800,
+        createdAt: '12/20/23', // December 20, 2023
+        budgetType: BudgetType.TRAVEL_AND_TOUR,
+      },
     ],
   },
 };

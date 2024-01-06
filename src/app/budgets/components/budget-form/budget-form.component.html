@@ -1,0 +1,25 @@
+<form [formGroup]="budgetForm">
+  <div class="flex flex-column gap-2 mb-2">
+    <label for="name">Name</label>
+    <input pInputText id="name" type="text" formControlName="name" />
+  </div>
+  <div class="flex flex-column gap-2 mb-2 w-full">
+    <label for="type">Budget Type</label>
+    <p-dropdown formControlName="budgetType" [options]="budgetTypes" optionLabel="type" appendTo="body"
+      placeholder="Select Type" styleClass="w-full" />
+  </div>
+  <div class="flex gap-2">
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="createdAt">Created Date</label>
+      <p-calendar id="createdAt" styleClass="w-full" formControlName="createdAt" [iconDisplay]="'input'"
+        [showIcon]="true" appendTo="body" />
+    </div>
+    <div class="flex flex-column gap-2 mb-2 w-6">
+      <label for="amount">Amount</label>
+      <input pInputText id="amount" pKeyFilter="money" formControlName="amount" />
+    </div>
+  </div>
+  <div class="mt-3 m-auto">
+    <p-button label="Submit" styleClass="w-full" (click)="onSubmit()" />
+  </div>
+</form>
