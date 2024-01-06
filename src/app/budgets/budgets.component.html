@@ -1,0 +1,45 @@
+<div class="flex justify-content-between align-items-center mb-3">
+  <h3 class="m-0 font-semibold">All Budgets</h3>
+  <p-button label="Add New" icon="pi pi-plus-circle" size="small" (onClick)="onAddNewClick()" />
+</div>
+<div class="bg-white border-round-lg shadow-1 p-2">
+  <p-toast />
+  <p-confirmDialog />
+  <p-table [value]="budgets" [scrollable]="true" scrollHeight="520px"
+    [tableStyle]="{'min-width': '40rem', 'border-spacing':'0 1rem',}">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th class="pl-4" style="width: 25%;">Name</th>
+        <th>Budget Type</th>
+        <th pSortableColumn="createdAt" style="width:20%">Created Date<p-sortIcon field="createdAt" /></th>
+        <th pSortableColumn="amount" style="width:20%">Amount<p-sortIcon field="amount" /></th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-budget let-columns="columns">
+      <tr class="shadow-2 border-round-xl">
+        <td class="border-round-left-xl bg-blue-700">
+          <p class="text-white">
+            @if (budget.budgetType === 'Dining Out') {
+            <span class="material-symbols-outlined" style="font-size: 20px;">
+              ramen_dining
+            </span>
+            }@else {
+            <i [ngClass]="budgetIcons[budget.budgetType]"></i>
+            }
+            {{budget.name}}
+          </p>
+        </td>
+        <td>{{budget.budgetType}}</td>
+        <td>{{budget.createdAt}}</td>
+        <td>{{budget.amount}}TK</td>
+        <td class="border-round-right-xl">
+          <div class="flex">
+            <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" (onClick)="onEditClick(budget)" />
+            <p-button icon="pi pi-trash" [rounded]="true" [text]="true" (onClick)="onDeleteClick($event, budget)" />
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

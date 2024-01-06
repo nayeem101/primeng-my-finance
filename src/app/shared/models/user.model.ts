@@ -48,6 +48,16 @@ export interface Budget {
   name: string;
   amount: number;
   createdAt?: string;
+  budgetType?: BudgetType;
+}
+
+export enum BudgetType {
+  GROCERIES = 'Groceries',
+  ENTERTAINMENT = 'Entertainment',
+  UTILITIES = 'Utilities',
+  TRANSPORTATION = 'Transportation',
+  DINING_OUT = 'Dining Out',
+  TRAVEL_AND_TOUR = 'Travel & Tour',
 }
 
 export enum TransactionType {

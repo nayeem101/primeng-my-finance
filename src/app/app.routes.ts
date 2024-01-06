@@ -22,4 +22,11 @@ export const routes: Routes = [
         (m) => m.TransactionsComponent
       ),
   },
+  {
+    path: 'budgets',
+    loadComponent: () =>
+      import('../app/budgets/budgets.component').then(
+        (m) => m.BudgetsComponent
+      ),
+  },
 ];

@@ -5,3 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.material-icons,
+.material-symbols-outlined {
+  vertical-align: text-bottom;
+}
