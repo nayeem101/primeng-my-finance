@@ -29,4 +29,11 @@ export const routes: Routes = [
         (m) => m.BudgetsComponent
       ),
   },
+  {
+    path: 'settings',
+    loadComponent: () =>
+      import('../app/settings/settings.component').then(
+        (m) => m.SettingsComponent
+      ),
+  },
 ];
