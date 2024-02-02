@@ -11,4 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './account-setting.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AccountSettingComponent { }
+export class AccountSettingComponent { 
+
+}
