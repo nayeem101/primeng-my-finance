@@ -1,1 +1,51 @@
-<p>edit-profile works!</p>,
+<div class="p-3">
+  <form class="w-6" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-column gap-2 mb-3">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" pInputText formControlName="firstName">
+      @if (profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched) {
+      <small class="p-error">
+        First Name is required.
+      </small>
+      }
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" pInputText formControlName="lastName">
+      @if (profileForm.controls.lastName.hasError('required') && profileForm.controls.lastName.touched) {
+      <small class="p-error">
+        Last Name is required.
+      </small>
+      }
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label for="mobileNumber">Mobile Number</label>
+      <input id="mobileNumber" type="text" pInputText formControlName="mobileNumber">
+      @if (profileForm.controls.mobileNumber.hasError('required') && profileForm.controls.mobileNumber.touched) {
+      <small class="p-error">
+        Mobile Number is required.
+      </small>
+      }
+      @if (profileForm.controls.mobileNumber.hasError('pattern') && profileForm.controls.mobileNumber.touched) {
+      <small class="p-error">
+        Please enter a valid Bangladeshi mobile number.
+      </small>
+      }
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label for="occupation">Occupation</label>
+      <input id="occupation" type="text" pInputText formControlName="occupation">
+      @if (profileForm.controls.occupation.hasError('required') && profileForm.controls.occupation.touched) {
+      <small class="p-error">
+        Occupation is required.
+      </small>
+      }
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label for="bio">Bio</label>
+      <textarea rows="5" cols="30" pInputTextarea formControlName="bio" [autoResize]="true"></textarea>
+    </div>
+
+    <button type="submit" pButton [disabled]="profileForm.invalid">Save</button>
+  </form>
+</div>
