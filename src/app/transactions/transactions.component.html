@@ -7,7 +7,7 @@
     <div class="bg-white border-round-lg shadow-1 px-2 py-3">
       <p-toast></p-toast>
       <p-confirmDialog></p-confirmDialog>
-      <p-table [value]="transactions" styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="520px"
+      <p-table [value]="transactions()" styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="75vh"
         [tableStyle]="{'min-width': '40rem'}">
         <ng-template pTemplate="header" let-columns>
           <tr>

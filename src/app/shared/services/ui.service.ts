@@ -5,7 +5,7 @@ import { Injectable, computed, signal } from '@angular/core';
 })
 export class UiService {
   private sidebarVisible = signal(false);
-  isSidebarVisible = computed(() => this.sidebarVisible);
+  isSidebarVisible = this.sidebarVisible.asReadonly();
 
   toggleSidebarVisibility() {
     this.sidebarVisible.set(!this.sidebarVisible());
