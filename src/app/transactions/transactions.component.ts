@@ -7,7 +7,11 @@ import {
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import {
+  DialogService,
+  DynamicDialogConfig,
+  DynamicDialogRef,
+} from 'primeng/dynamicdialog';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { user1 } from '../shared/models/user.data';
@@ -16,6 +20,7 @@ import {
   TransactionType,
 } from '../shared/models/user.model';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
+import { TransactionStore } from '../shared/store/transactions.store';
 
 @Component({
   selector: 'app-transactions',
@@ -23,16 +28,23 @@ import { TransactionFormComponent } from './components/transaction-form/transact
   imports: [TableModule, ButtonModule, ConfirmDialogModule, ToastModule],
   templateUrl: './transactions.component.html',
   styleUrl: './transactions.component.css',
-  providers: [ConfirmationService, MessageService, DialogService],
+  providers: [
+    ConfirmationService,
+    MessageService,
+    DialogService,
+    TransactionStore,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TransactionsComponent implements OnDestroy {
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
   private dialogService = inject(DialogService);
+  private transactionsStore = inject(TransactionStore);
 
-  ref: DynamicDialogRef | undefined;
-  transactions: AccountTransaction[] = user1.manager.transactions;
+  dialogRef: DynamicDialogRef | undefined;
+  // transactions: AccountTransaction[] = user1.manager.transactions;
+  transactions = this.transactionsStore.entities;
 
   getTransactionSign(transactionType: TransactionType): string {
     switch (transactionType) {
@@ -92,7 +104,8 @@ export class TransactionsComponent implements OnDestroy {
   openDialogForm(action: 'create' | 'edit', data?: any) {
     console.log({ action, data });
     const header = action === 'create' ? 'Add Transaction' : 'Edit Transaction';
-    this.ref = this.dialogService.open(TransactionFormComponent, {
+
+    this.dialogRef = this.dialogService.open(TransactionFormComponent, {
       header,
       width: '40vw',
       contentStyle: { overflow: 'auto' },
@@ -103,31 +116,46 @@ export class TransactionsComponent implements OnDestroy {
       data,
     });
 
-    this.ref.onClose.subscribe((data) => {
+    this.dialogRef.onClose.subscribe((data) => {
       console.log(data);
-      if (data) {
-        const summary_and_detail =
-          action === 'edit'
-            ? {
-                summary: 'Transaction Updated',
-                detail: `Transaction Type: ${data.formData?.type?.name}`,
-              }
-            : {
-                summary: 'New Transaction Added',
-                detail: `Transaction Type: ${data.formData?.type?.name}`,
-              };
-        this.messageService.add({
-          severity: 'info',
-          ...summary_and_detail,
-          life: 2000,
-        });
+      if (!data) {
+        return;
       }
+      //add transaction
+      if (action === 'create') {
+        const formData = data.formData;
+        const newTransaction: AccountTransaction = {
+          ...formData,
+          id: this.transactionsStore.ids().length + 1,
+          accountName: formData.accountName.name,
+          type: formData.type.name,
+        };
+        console.log(newTransaction);
+        this.transactionsStore.addTransaction(newTransaction);
+      }
+
+      //show message alert
+      const summary_and_detail =
+        action === 'edit'
+          ? {
+              summary: 'Transaction Updated',
+              detail: `Transaction Type: ${data.formData?.type?.name}`,
+            }
+          : {
+              summary: 'New Transaction Added',
+              detail: `Transaction Type: ${data.formData?.type?.name}`,
+            };
+      this.messageService.add({
+        severity: 'info',
+        ...summary_and_detail,
+        life: 2000,
+      });
     });
   }
 
   ngOnDestroy() {
-    if (this.ref) {
-      this.ref.close();
+    if (this.dialogRef) {
+      this.dialogRef.close();
     }
   }
 }

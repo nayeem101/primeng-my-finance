@@ -41,7 +41,7 @@ export interface Transaction {
   type: TransactionType;
   name: string;
   amount: number;
-  date?: string;
+  date: string;
 }
 
 export interface Budget {
