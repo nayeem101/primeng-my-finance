@@ -23,17 +23,17 @@ import { TransactionFormComponent } from './components/transaction-form/transact
 import { TransactionStore } from '../shared/store/transactions.store';
 
 @Component({
-    selector: 'app-transactions',
-    imports: [TableModule, ButtonModule, ConfirmDialogModule, ToastModule],
-    templateUrl: './transactions.component.html',
-    styleUrl: './transactions.component.css',
-    providers: [
-        ConfirmationService,
-        MessageService,
-        DialogService,
-        TransactionStore,
-    ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-transactions',
+  imports: [TableModule, ButtonModule, ConfirmDialogModule, ToastModule],
+  templateUrl: './transactions.component.html',
+  styleUrl: './transactions.component.css',
+  providers: [
+    ConfirmationService,
+    MessageService,
+    DialogService,
+    TransactionStore,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TransactionsComponent implements OnDestroy {
   private confirmationService = inject(ConfirmationService);
@@ -84,10 +84,13 @@ export class TransactionsComponent implements OnDestroy {
       rejectIcon: 'none',
 
       accept: () => {
+        // delete transaction
+        this.transactionsStore.removeTransaction(transaction.id);
+        // show message
         this.messageService.add({
           severity: 'info',
           summary: 'Confirmed',
-          detail: 'Record deleted',
+          detail: 'Transaction deleted',
         });
       },
       reject: () => {
