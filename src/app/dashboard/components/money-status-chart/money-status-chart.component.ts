@@ -4,12 +4,11 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
-  selector: 'app-money-status-chart',
-  standalone: true,
-  imports: [CommonModule, ChartModule],
-  templateUrl: './money-status-chart.component.html',
-  styleUrl: './money-status-chart.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-money-status-chart',
+    imports: [CommonModule, ChartModule],
+    templateUrl: './money-status-chart.component.html',
+    styleUrl: './money-status-chart.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MoneyStatusChartComponent implements OnInit {
   data!: ChartData;

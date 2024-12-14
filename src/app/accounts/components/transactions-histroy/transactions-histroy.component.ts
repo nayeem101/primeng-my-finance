@@ -7,12 +7,11 @@ import {
 } from '../../../shared/models/user.model';
 
 @Component({
-  selector: 'app-transactions-histroy',
-  standalone: true,
-  imports: [MoneyCardComponent],
-  templateUrl: './transactions-histroy.component.html',
-  styleUrl: './transactions-histroy.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-transactions-histroy',
+    imports: [MoneyCardComponent],
+    templateUrl: './transactions-histroy.component.html',
+    styleUrl: './transactions-histroy.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransactionsHistroyComponent {
   accountData: AccountData[] = [

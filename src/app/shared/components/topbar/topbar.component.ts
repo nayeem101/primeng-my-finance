@@ -11,12 +11,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MenuModule } from 'primeng/menu';
 
 @Component({
-  selector: 'app-topbar',
-  standalone: true,
-  imports: [FormsModule, InputTextModule, MenuModule],
-  templateUrl: './topbar.component.html',
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-topbar',
+    imports: [FormsModule, InputTextModule, MenuModule],
+    templateUrl: './topbar.component.html',
+    styles: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopbarComponent implements OnInit {
   @Output() hideSidebar = new EventEmitter<boolean>();

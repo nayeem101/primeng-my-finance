@@ -15,19 +15,18 @@ interface BudgetIconMap {
 }
 
 @Component({
-  selector: 'app-budgets',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TableModule,
-    ButtonModule,
-    ConfirmDialogModule,
-    ToastModule,
-  ],
-  templateUrl: './budgets.component.html',
-  styleUrl: './budgets.component.css',
-  providers: [ConfirmationService, MessageService, DialogService],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-budgets',
+    imports: [
+        CommonModule,
+        TableModule,
+        ButtonModule,
+        ConfirmDialogModule,
+        ToastModule,
+    ],
+    templateUrl: './budgets.component.html',
+    styleUrl: './budgets.component.css',
+    providers: [ConfirmationService, MessageService, DialogService],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BudgetsComponent {
   private confirmationService = inject(ConfirmationService);

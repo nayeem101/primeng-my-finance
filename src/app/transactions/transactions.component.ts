@@ -23,18 +23,17 @@ import { TransactionFormComponent } from './components/transaction-form/transact
 import { TransactionStore } from '../shared/store/transactions.store';
 
 @Component({
-  selector: 'app-transactions',
-  standalone: true,
-  imports: [TableModule, ButtonModule, ConfirmDialogModule, ToastModule],
-  templateUrl: './transactions.component.html',
-  styleUrl: './transactions.component.css',
-  providers: [
-    ConfirmationService,
-    MessageService,
-    DialogService,
-    TransactionStore,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-transactions',
+    imports: [TableModule, ButtonModule, ConfirmDialogModule, ToastModule],
+    templateUrl: './transactions.component.html',
+    styleUrl: './transactions.component.css',
+    providers: [
+        ConfirmationService,
+        MessageService,
+        DialogService,
+        TransactionStore,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransactionsComponent implements OnDestroy {
   private confirmationService = inject(ConfirmationService);

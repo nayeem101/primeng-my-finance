@@ -11,15 +11,14 @@ const Components = [
 ];
 
 @Component({
-  selector: 'app-settings',
-  standalone: true,
-  imports: [Components, TabsModule],
-  templateUrl: './settings.component.html',
-  styles: `
+    selector: 'app-settings',
+    imports: [Components, TabsModule],
+    templateUrl: './settings.component.html',
+    styles: `
     :host {
       display: block;
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsComponent {}

@@ -14,19 +14,18 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { BudgetType } from '../../../shared/models/user.model';
 
 @Component({
-  selector: 'app-budget-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    InputTextModule,
-    KeyFilterModule,
-    CalendarModule,
-    DropdownModule,
-    ButtonModule,
-  ],
-  templateUrl: './budget-form.component.html',
-  styleUrl: './budget-form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-budget-form',
+    imports: [
+        ReactiveFormsModule,
+        InputTextModule,
+        KeyFilterModule,
+        CalendarModule,
+        DropdownModule,
+        ButtonModule,
+    ],
+    templateUrl: './budget-form.component.html',
+    styleUrl: './budget-form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BudgetFormComponent implements OnInit {
   private dialogRef = inject(DynamicDialogRef);

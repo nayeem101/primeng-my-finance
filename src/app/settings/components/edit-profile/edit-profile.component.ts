@@ -5,12 +5,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
 
 @Component({
-  selector: 'app-edit-profile',
-  standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, TextareaModule, ButtonModule],
-  templateUrl: './edit-profile.component.html',
-  styleUrl: './edit-profile.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-edit-profile',
+    imports: [ReactiveFormsModule, InputTextModule, TextareaModule, ButtonModule],
+    templateUrl: './edit-profile.component.html',
+    styleUrl: './edit-profile.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditProfileComponent {
   private formBuilder = inject(FormBuilder);

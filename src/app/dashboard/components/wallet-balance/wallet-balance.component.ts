@@ -4,11 +4,10 @@ import { AccountData } from '../../../shared/models/user.model';
 import { MoneyCardComponent } from '../../../shared/components/money-card/money-card.component';
 
 @Component({
-  selector: 'app-wallet-balance',
-  standalone: true,
-  imports: [CardModule, MoneyCardComponent],
-  templateUrl: './wallet-balance.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-wallet-balance',
+    imports: [CardModule, MoneyCardComponent],
+    templateUrl: './wallet-balance.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WalletBalanceComponent {
   accountData: AccountData[] = [

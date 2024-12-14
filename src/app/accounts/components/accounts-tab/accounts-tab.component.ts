@@ -6,17 +6,16 @@ import { MoneyCardComponent } from '../../../shared/components/money-card/money-
 import { DividerModule } from 'primeng/divider';
 
 @Component({
-  selector: 'app-accounts-tab',
-  standalone: true,
-  imports: [
-    AccPieChartComponent,
-    AccHorizontalBarChartComponent,
-    MoneyCardComponent,
-    DividerModule
-  ],
-  templateUrl: './accounts-tab.component.html',
-  styleUrl: './accounts-tab.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-accounts-tab',
+    imports: [
+        AccPieChartComponent,
+        AccHorizontalBarChartComponent,
+        MoneyCardComponent,
+        DividerModule
+    ],
+    templateUrl: './accounts-tab.component.html',
+    styleUrl: './accounts-tab.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AccountsTabComponent {
   accountData: AccountData[] = [

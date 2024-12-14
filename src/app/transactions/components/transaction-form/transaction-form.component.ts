@@ -20,19 +20,18 @@ type Account = {
 };
 
 @Component({
-  selector: 'app-transaction-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    InputTextModule,
-    KeyFilterModule,
-    CalendarModule,
-    DropdownModule,
-    ButtonModule
-  ],
-  templateUrl: './transaction-form.component.html',
-  styleUrl: './transaction-form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-transaction-form',
+    imports: [
+        ReactiveFormsModule,
+        InputTextModule,
+        KeyFilterModule,
+        CalendarModule,
+        DropdownModule,
+        ButtonModule
+    ],
+    templateUrl: './transaction-form.component.html',
+    styleUrl: './transaction-form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransactionFormComponent implements OnInit {
   private dialogRef = inject(DynamicDialogRef);

@@ -12,11 +12,10 @@ const Components = [
 ];
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [Components],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-dashboard',
+    imports: [Components],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {}

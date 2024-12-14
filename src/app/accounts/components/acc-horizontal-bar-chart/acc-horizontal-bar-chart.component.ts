@@ -3,16 +3,15 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
-  selector: 'app-acc-horizontal-bar-chart',
-  standalone: true,
-  imports: [ChartModule],
-  template: `<p-chart type="bar" [data]="data" [options]="options"></p-chart>`,
-  styles: `
+    selector: 'app-acc-horizontal-bar-chart',
+    imports: [ChartModule],
+    template: `<p-chart type="bar" [data]="data" [options]="options"></p-chart>`,
+    styles: `
     :host {
       display: block;
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AccHorizontalBarChartComponent implements OnInit {
   data!: ChartData;

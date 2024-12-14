@@ -11,7 +11,6 @@ const components = [SidebarComponent, TopbarComponent];
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [
     RouterOutlet,
     ButtonModule,
