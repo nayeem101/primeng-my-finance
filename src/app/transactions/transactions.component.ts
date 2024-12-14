@@ -118,14 +118,14 @@ export class TransactionsComponent implements OnDestroy {
       data,
     });
 
-    this.dialogRef.onClose.subscribe((data) => {
-      console.log(data);
-      if (!data) {
+    this.dialogRef.onClose.subscribe((dialogData) => {
+      console.log(dialogData);
+      if (!dialogData) {
         return;
       }
       //add transaction
       if (action === 'create') {
-        const formData = data.formData;
+        const { formData } = dialogData;
         const newTransaction: AccountTransaction = {
           ...formData,
           id: this.transactionsStore.ids().length + 1,
@@ -134,6 +134,19 @@ export class TransactionsComponent implements OnDestroy {
         };
         console.log(newTransaction);
         this.transactionsStore.addTransaction(newTransaction);
+      }
+
+      //update transaction
+      if (action === 'edit') {
+        const { formData } = dialogData;
+        const updatedTransaction: AccountTransaction = {
+          ...formData,
+          accountName: formData.accountName.name,
+          type: formData.type.name,
+          amount: formData.amount
+        };
+        console.log(updatedTransaction);
+        this.transactionsStore.updateTransaction(updatedTransaction);
       }
 
       //show message alert

@@ -3,6 +3,7 @@ import {
   addEntities,
   addEntity,
   removeEntity,
+  updateEntity,
   withEntities,
 } from '@ngrx/signals/entities';
 import { user1 } from '../models/user.data';
@@ -14,6 +15,10 @@ export const TransactionStore = signalStore(
     addTransaction(entity: AccountTransaction) {
       console.log(entity);
       patchState(store, addEntity(entity));
+    },
+    updateTransaction(entity: AccountTransaction) {
+      console.log(entity);
+      patchState(store, updateEntity({ id: entity.id, changes: entity }));
     },
     removeTransaction(id: number) {
       patchState(store, removeEntity(id));

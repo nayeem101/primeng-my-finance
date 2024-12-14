@@ -1,5 +1,4 @@
-
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,4 +8,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+  readonly sidebarVisible = input.required<boolean>();
+}

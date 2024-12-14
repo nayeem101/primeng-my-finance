@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
@@ -24,9 +24,9 @@ const components = [SidebarComponent, TopbarComponent];
 })
 export class AppComponent {
   title = 'primeng-my-finance';
-  sidebarVisible = false;
+  sidebarVisible = signal(false);
 
   onShowSidebar(showSidebar: boolean) {
-    this.sidebarVisible = showSidebar;
+    this.sidebarVisible.set(showSidebar);
   }
 }

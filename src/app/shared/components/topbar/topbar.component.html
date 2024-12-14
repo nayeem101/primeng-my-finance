@@ -1,15 +1,14 @@
 <div
-  class="flex justify-between items-center px-2 md:px-8 bg-surface-0 dark:bg-surface-900 border-b border-surface relative lg:static"
-  style="height: 60px;">
+  class="flex justify-between items-center px-2 md:px-8 bg-surface-0 dark:bg-surface-900 border-b border-surface relative lg:static">
   <div class="flex">
-    <a (click)="toggleSidebar()" pRipple pstyleclass="#sidebar" enterFromClass="hidden" enteractiveclass="animate-fadeinleft"
-      leavetoclass="hidden" leaveactiveclass="animate-fadeoutleft"
+    <a (click)="toggleSidebar()" pRipple pstyleclass="#sidebar" enterFromClass="hidden"
+      enteractiveclass="animate-fadeinleft" leavetoclass="hidden" leaveactiveclass="animate-fadeoutleft"
       class="p-ripple p-element cursor-pointer inline-flex items-center justify-center lg:hidden text-surface-700 dark:text-surface-100 mr-2">
       <i class="pi pi-bars text-4xl"></i>
     </a>
-    <div class="flex items-center lg:px-0 shrink-0 mr-2 lg:hidden">
-      <img src="assets/images/myfinance.jpg" alt="logo" height="50">
-      <h2 class="text-purple-700 text-lg">PrimeFinance</h2>
+    <div class="flex items-center shrink-0 mr-2">
+      <img src="assets/images/myfinance.jpg" alt="logo" width="50">
+      <h2 class="text-purple-700 text-lg font-bold">PrimeFinance</h2>
     </div>
     <span class="p-input-icon-left hidden md:inline">
       <i class="pi pi-search"></i>
@@ -20,7 +19,7 @@
 
   <ul class="list-none p-0 m-0 flex items-center select-none flex-row bg-surface-0 dark:bg-surface-950">
     <li class="hidden md:flex justify-center">
-      <p-menu #menu [model]="items" [popup]="true" styleClass="left-auto"></p-menu>
+      <p-menu #menu [model]="items" [popup]="true" />
       <a pRipple (click)="menu.toggle($event)" role="button"
         class="p-ripple p-element flex p-4 lg:px-4 lg:py-2 items-center text-surface-600 dark:text-surface-200 hover:text-surface-900 dark:hover:text-surface-0 hover:bg-surface-100 dark:hover:bg-surface-700 font-medium rounded-border cursor-pointer duration-150 transition-colors">
         <i class="pi pi-plus-circle text-base lg:text-2xl"></i>

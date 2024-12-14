@@ -1,37 +1,35 @@
 <div class="flex flex-col h-full">
+  @if (sidebarVisible()) {
   <div class="flex items-center gap-2 px-4 lg:px-2 shrink-0 h-14">
-    <img src="assets/images/myfinance.jpg" alt="logo" class="w-14">
+    <img src="assets/images/myfinance.jpg" alt="logo" width="50">
     <h3 class="text-purple-700 font-bold lg:text-lg xl:text-xl">PrimeFinance</h3>
   </div>
+  }
   <div class="overflow-y-auto mt-6">
     <ul class="list-none p-0 m-0 overflow-hidden">
       <li>
-        <a pRipple
-          routerLink=""
+        <a pRipple routerLink=""
           class="p-ripple p-element no-underline flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors">
           <i class="pi pi-home mr-2"></i>
           <span class="font-medium">Dashboard</span>
         </a>
       </li>
       <li>
-        <a pRipple
-          routerLink="accounts"
+        <a pRipple routerLink="accounts"
           class="p-ripple p-element no-underline flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors">
           <i class="pi pi-credit-card mr-2"></i>
           <span class="font-medium">Accounts</span>
         </a>
       </li>
       <li>
-        <a pRipple
-          routerLink="transactions"
+        <a pRipple routerLink="transactions"
           class="p-ripple p-element no-underline flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors">
           <i class="pi pi-arrow-right-arrow-left mr-2"></i>
           <span class="font-medium">Transactions</span>
         </a>
       </li>
       <li>
-        <a pRipple
-          routerLink="budgets"
+        <a pRipple routerLink="budgets"
           class="p-ripple p-element no-underline flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors">
           <i class="pi pi-wallet mr-2"></i>
           <span class="font-medium">Budget</span>
@@ -45,8 +43,7 @@
         </a>
       </li>
       <li>
-        <a pRipple
-          routerLink="settings"
+        <a pRipple routerLink="settings"
           class="p-ripple p-element no-underline flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors">
           <i class="pi pi-cog mr-2"></i>
           <span class="font-medium">Settings</span>
