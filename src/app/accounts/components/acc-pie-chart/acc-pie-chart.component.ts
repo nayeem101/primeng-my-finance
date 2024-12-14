@@ -3,15 +3,17 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
-    selector: 'app-acc-pie-chart',
-    imports: [ChartModule],
-    template: `<div class="w-12rem xl:w-18rem"><p-chart type="pie" [data]="data" [options]="options"></p-chart></div>`,
-    styles: `
+  selector: 'app-acc-pie-chart',
+  imports: [ChartModule],
+  template: `<div class="w-12rem xl:w-18rem">
+    <p-chart type="pie" [data]="data" [options]="options"></p-chart>
+  </div>`,
+  styles: `
     :host {
       display: block;
     }
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccPieChartComponent implements OnInit {
   data!: ChartData;

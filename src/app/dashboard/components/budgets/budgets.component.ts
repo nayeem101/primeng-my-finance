@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { user1 } from '../../../shared/models/user.data';
 
 @Component({
     selector: 'app-budgets',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './budgets.component.html',
     styles: `
     :host {

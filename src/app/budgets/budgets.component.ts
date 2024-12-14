@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -15,18 +15,18 @@ interface BudgetIconMap {
 }
 
 @Component({
-    selector: 'app-budgets',
-    imports: [
-        CommonModule,
-        TableModule,
-        ButtonModule,
-        ConfirmDialogModule,
-        ToastModule,
-    ],
-    templateUrl: './budgets.component.html',
-    styleUrl: './budgets.component.css',
-    providers: [ConfirmationService, MessageService, DialogService],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-budgets',
+  imports: [
+    NgClass,
+    TableModule,
+    ButtonModule,
+    ConfirmDialogModule,
+    ToastModule,
+  ],
+  templateUrl: './budgets.component.html',
+  styleUrl: './budgets.component.css',
+  providers: [ConfirmationService, MessageService, DialogService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BudgetsComponent {
   private confirmationService = inject(ConfirmationService);

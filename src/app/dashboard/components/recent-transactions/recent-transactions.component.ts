@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-recent-transactions',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './recent-transactions.component.html',
     styles: `
     .list li:not(:last-child) {

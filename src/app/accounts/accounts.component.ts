@@ -5,10 +5,10 @@ import { TabsModule } from 'primeng/tabs';
 const Components = [AccountsTabComponent, TransactionsHistroyComponent];
 
 @Component({
-    selector: 'app-accounts',
-    imports: [Components, TabsModule],
-    templateUrl: './accounts.component.html',
-    styleUrl: './accounts.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-accounts',
+  imports: [Components, TabsModule],
+  templateUrl: './accounts.component.html',
+  styleUrl: './accounts.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountsComponent {}

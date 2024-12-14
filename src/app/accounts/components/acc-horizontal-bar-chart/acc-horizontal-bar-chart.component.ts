@@ -3,15 +3,15 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
-    selector: 'app-acc-horizontal-bar-chart',
-    imports: [ChartModule],
-    template: `<p-chart type="bar" [data]="data" [options]="options"></p-chart>`,
-    styles: `
+  selector: 'app-acc-horizontal-bar-chart',
+  imports: [ChartModule],
+  template: `<p-chart type="bar" [data]="data" [options]="options"></p-chart>`,
+  styles: `
     :host {
       display: block;
     }
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccHorizontalBarChartComponent implements OnInit {
   data!: ChartData;
@@ -26,10 +26,10 @@ export class AccHorizontalBarChartComponent implements OnInit {
         {
           data: [10, 70, 15, 5],
           backgroundColor: [
-            documentStyle.getPropertyValue('--p-  blue-500'),
-            documentStyle.getPropertyValue('--p-  yellow-500'),
-            documentStyle.getPropertyValue('--p-  green-500'),
-            documentStyle.getPropertyValue('--p-  orange-500'),
+            documentStyle.getPropertyValue('--p-blue-500'),
+            documentStyle.getPropertyValue('--p-yellow-500'),
+            documentStyle.getPropertyValue('--p-green-500'),
+            documentStyle.getPropertyValue('--p-orange-500'),
           ],
           hoverBackgroundColor: [
             documentStyle.getPropertyValue('--p-blue-400'),
