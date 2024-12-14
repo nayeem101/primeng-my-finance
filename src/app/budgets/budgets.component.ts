@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { Budget, BudgetType } from '../shared/models/user.model';
-import { user1 } from '../shared/models/user.data';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { BudgetFormComponent } from './components/budget-form/budget-form.component';
-import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { user1 } from '../shared/models/user.data';
+import { Budget, BudgetType } from '../shared/models/user.model';
+import { BudgetFormComponent } from './components/budget-form/budget-form.component';
 
 interface BudgetIconMap {
   [key: string]: string;

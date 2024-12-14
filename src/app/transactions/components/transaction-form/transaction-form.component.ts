@@ -12,6 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { user1 } from '../../../shared/models/user.data';
 import { TransactionType } from '../../../shared/models/user.model';
+import { ButtonModule } from 'primeng/button';
 
 type Account = {
   id: number;
@@ -27,6 +28,7 @@ type Account = {
     KeyFilterModule,
     CalendarModule,
     DropdownModule,
+    ButtonModule
   ],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.css',

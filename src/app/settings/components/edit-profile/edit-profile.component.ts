@@ -2,17 +2,12 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    InputTextModule,
-    InputTextareaModule,
-    ButtonModule,
-  ],
+  imports: [ReactiveFormsModule, InputTextModule, TextareaModule, ButtonModule],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

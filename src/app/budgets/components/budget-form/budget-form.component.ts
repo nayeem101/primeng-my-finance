@@ -5,12 +5,13 @@ import {
   inject,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { BudgetType } from '../../../shared/models/user.model';
-import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-budget-form',
@@ -21,6 +22,7 @@ import { DropdownModule } from 'primeng/dropdown';
     KeyFilterModule,
     CalendarModule,
     DropdownModule,
+    ButtonModule,
   ],
   templateUrl: './budget-form.component.html',
   styleUrl: './budget-form.component.css',

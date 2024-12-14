@@ -14,7 +14,7 @@
   overflow: hidden;
   background: #1488cc;
   /* fallback for old browsers */
-  background: linear-gradient(to right, var(--blue-600), var(--blue-900));
+  background: linear-gradient(to right, var(--p-blue-600), var(--p-blue-900));
 }
 
 .ring {

@@ -1,45 +1,45 @@
 <div
-  class="flex justify-content-between align-items-center px-2 md:px-5 surface-0 border-bottom-1 surface-border relative lg:static"
+  class="flex justify-between items-center px-2 md:px-8 bg-surface-0 dark:bg-surface-900 border-b border-surface relative lg:static"
   style="height: 60px;">
   <div class="flex">
-    <a (click)="toggleSidebar()" pRipple pstyleclass="#sidebar" enterFromClass="hidden" enteractiveclass="fadeinleft"
-      leavetoclass="hidden" leaveactiveclass="fadeoutleft"
-      class="p-ripple p-element cursor-pointer inline-flex align-items-center justify-content-center lg:hidden text-700 mr-2">
+    <a (click)="toggleSidebar()" pRipple pstyleclass="#sidebar" enterFromClass="hidden" enteractiveclass="animate-fadeinleft"
+      leavetoclass="hidden" leaveactiveclass="animate-fadeoutleft"
+      class="p-ripple p-element cursor-pointer inline-flex items-center justify-center lg:hidden text-surface-700 dark:text-surface-100 mr-2">
       <i class="pi pi-bars text-4xl"></i>
     </a>
-    <div class="flex align-items-center lg:px-0 flex-shrink-0 mr-2 lg:hidden">
+    <div class="flex items-center lg:px-0 shrink-0 mr-2 lg:hidden">
       <img src="assets/images/myfinance.jpg" alt="logo" height="50">
       <h2 class="text-purple-700 text-lg">PrimeFinance</h2>
     </div>
     <span class="p-input-icon-left hidden md:inline">
       <i class="pi pi-search"></i>
-      <input type="text" pInputText placeholder="Search" class="w-15rem lg:w-20rem xl:w-30rem" name="search"
+      <input type="text" pInputText placeholder="Search" class="w-60 lg:w-80 xl:w-[30rem]" name="search"
         [(ngModel)]="searchValue" />
     </span>
   </div>
 
-  <ul class="list-none p-0 m-0 flex align-items-center select-none flex-row surface-section">
-    <li class="hidden md:flex justify-content-center">
+  <ul class="list-none p-0 m-0 flex items-center select-none flex-row bg-surface-0 dark:bg-surface-950">
+    <li class="hidden md:flex justify-center">
       <p-menu #menu [model]="items" [popup]="true" styleClass="left-auto"></p-menu>
       <a pRipple (click)="menu.toggle($event)" role="button"
-        class="p-ripple p-element flex p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-duration-150 transition-colors">
+        class="p-ripple p-element flex p-4 lg:px-4 lg:py-2 items-center text-surface-600 dark:text-surface-200 hover:text-surface-900 dark:hover:text-surface-0 hover:bg-surface-100 dark:hover:bg-surface-700 font-medium rounded-border cursor-pointer duration-150 transition-colors">
         <i class="pi pi-plus-circle text-base lg:text-2xl"></i>
       </a>
     </li>
     <li class="hidden md:block">
       <a pRipple
-        class="p-ripple p-element flex p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-duration-150 transition-colors"><i
+        class="p-ripple p-element flex p-4 lg:px-4 lg:py-2 items-center text-surface-600 dark:text-surface-200 hover:text-surface-900 dark:hover:text-surface-0 hover:bg-surface-100 dark:hover:bg-surface-700 font-medium rounded-border cursor-pointer duration-150 transition-colors"><i
           severity="danger" class="p-element pi pi-bell text-base lg:text-2xl p-overlay-badge"><span id="pr_id_1_badge"
             class="p-badge p-component p-badge-danger p-badge-dot"></span></i>
       </a>
     </li>
     <li>
       <a pRipple
-        class="p-ripple flex px-3 py-2 align-items-center hover:surface-100 font-medium border-round cursor-pointer transition-duration-150 transition-colors">
-        <img src="assets/images/nayeem.jpg" class="border-round" style="width: 30px; height: 32px;">
+        class="p-ripple flex px-4 py-2 items-center hover:bg-surface-100 dark:hover:bg-surface-700 font-medium rounded-border cursor-pointer duration-150 transition-colors">
+        <img src="assets/images/nayeem.jpg" class="rounded-border" style="width: 30px; height: 32px;">
         <div class="hidden lg:block lg:ml-2">
-          <div class="text-900 font-medium">Nayeem Islam</div>
-          <span class="text-600 font-medium text-sm">nayeemgmail.com</span>
+          <div class="text-surface-900 dark:text-surface-0 font-medium">Nayeem Islam</div>
+          <span class="text-surface-600 dark:text-surface-200 font-medium text-sm">nayeemgmail.com</span>
         </div>
 
       </a>

@@ -1,17 +1,18 @@
-<div class="block-content">
+<div class="block-content bg-surface-100">
     <div class="main">
-        <div class="min-h-screen flex relative lg:static surface-ground">
+        <div class="min-h-screen flex relative lg:static bg-surface-50 dark:bg-surface-950">
             <div
-                class="surface-section w-12rem xl:w-17rem hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none">
+                class="bg-surface-0 dark:bg-surface-950 w-48 xl:w-[17rem] hidden lg:block shrink-0 absolute lg:static left-0 top-0 z-10 border-r border-surface select-none">
                 <app-sidebar />
             </div>
             <p-sidebar [(visible)]="sidebarVisible" class="lg:hidden">
                 <app-sidebar />
             </p-sidebar>
-            <div class="min-h-screen flex flex-column relative flex-auto">
+            <div class="min-h-screen flex flex-col relative flex-auto">
                 <app-topbar (hideSidebar)="onShowSidebar($event)" />
-                <div class="p-1 md:p-3 flex flex-column flex-auto">
-                    <div class="w-screen md:w-auto border-2 border-dashed surface-border border-round flex-auto p-2 md:p-3">
+                <div class="p-1 md:p-4 flex flex-col flex-auto">
+                    <div
+                        class="w-screen md:w-auto border-2 border-dashed border-surface rounded-border flex-auto p-2 md:p-4">
                         <router-outlet />
                     </div>
                 </div>
